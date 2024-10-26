@@ -1,0 +1,38 @@
+Variables
+	Every computer program is about data
+	Bring in data, manipulate it, and use the data that is brought in
+Create a variable you need...
+	Its Name
+	Its Type
+	Its initial Value
+(CODE)
+	type(5)
+		this is a integer
+	type(5.1)
+		this is a float
+	type("name")
+		this is a string
+	x = 5
+		x is an integer
+	x = 5.0
+		x is a float
+Boolean
+	extremely limited
+	Boolean variables can only contain one of two variables
+		True
+		False
+	Used a lot with looping and branching
+
+
+Input / Output
+
+Output
+	Output is normally a type of print
+	
+
+
+(CODE)
+	print(f"{name} is {age} years old")
+		Cole is 18 years old
+	print(name + "is" + age + "years old")
+		ERROR!!!!!

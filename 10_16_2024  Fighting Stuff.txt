@@ -1,0 +1,15 @@
+	Character Class
+Armor
+Health
+Damage
+Chance to hit
+
+A name spot
+Add more characters
+Layout to show the stats
+
+System to hit other players
+Make sure they cant heal each other
+Make the text layouts for each action
+	Stats
+	Fighting

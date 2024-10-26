@@ -1,0 +1,9 @@
+Conditions
+	an expression
+	It is either True or False
+	this is often a comparison between a variable and a value
+		user == "DeIux"
+	it can also be a comparison between two variables
+		x < 5
+	It can also be a Boolean variable or expression
+		(more on those later)

@@ -1,0 +1,56 @@
+Import Random thing
+
+make the variable ((NUMCARDS)) equal 52 to show how many cards we have
+
+write out all card names in a tuple: Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King
+
+write out all suit names in a tuple: clubs, hearts, spades, diamonds
+
+write out all hand options in a tuple: deck, player, computer
+
+make the variable ((DECK)) equal 0
+make the variable ((PLAYER)) equal 1
+make the variable ((COMPUTER)) equal 2
+
+create a function called main()
+
+	make a variable called ((cardDB)) for card data base, that will get 	((initCarts))
+	
+	make a for loop for i in the range of 5
+		this will assign cards from the card data base to the player
+		this will assign cards from the card data base to the computer
+	
+	The function will then display the DB using cardDB
+
+	it will then show the players hand
+	it will also then show the computers hand
+
+Make a function for initCards
+
+	run cardDB
+	make a for loop to print out the cardDB
+
+Make a function for showDB with (cardDB) inside
+
+	make a for loop that will give the cards there face value
+		print out the numbers and assign them to the card name and who has the card
+
+make a function called getCardName with (cardNum) inside
+
+	define rank and suit
+	make a variable called ((name)) and make it print out the rank names and suits
+	return the new variable ((name))
+
+make a function called assignCard with (cardDB and picked) inside
+
+	make a variable called ((cardNum)) and using the random import, run randrange and use the variable  ((NUMCARDS))
+	run cardDB with (cardNum) inside and give those cards to ((picked))
+
+make a function called showHand with (cardDB and picked) inside
+	
+	give a little extra room to the list with pirint()
+	print out the cards in each persons hand text above each caard set
+	make a for loop for cardNum and let it find those in cardDB
+		make an if statement for each ((location)) thats equal to ((picked))
+			print out those cards
+run main()

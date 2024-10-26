@@ -1,0 +1,26 @@
+import random thing?
+
+
+say "welcome to my guessing game!"
+
+chances will equal 7
+number will equal 0
+randomize number
+keepGoing will equal true
+
+
+if chances reaches 0
+	keep going will be false
+	the program will print "sorry, you didn't guess my number, my number was (number)."
+
+
+while keep going:
+	make an input called choice and say "pick a number between 1 / 100."
+		if the players choice equals the number
+			the game will print "you win!"
+			keep going will be false
+		if your choice does not equal the number
+			subtract chances by 1
+			the program will then check if the number is to high and print "that is to high."
+			the program will then check if the number is to low and print "that is to low."
+				then the game will let choice ask "that is incorrect. you have (chances) amount of tries left, what's your next guess."

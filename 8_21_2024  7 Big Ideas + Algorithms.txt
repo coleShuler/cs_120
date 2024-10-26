@@ -1,0 +1,54 @@
+7 Big Ideas + Algorithms
+
+
+
+7 BIG IDEAS
+
+	Variables / Data
+	Input / Output
+	Operations
+	Branching
+	Looping
+	Functions
+	Aggregation
+
+Variables
+	Has a Name (Normally one word
+	Some languages are loose or strict
+	Most common are integer, float, string, and object
+Operations
+	Things you can do with Variables
+	Vary by data type (Numeric, Text, Conversion
+Input / Output
+	Output (Print something / Normal output text)
+	Input (Get information / Implies a variable to hold data)
+Branching
+	How computer appears to make decisions
+	Based on a decision (True / False Expressions)
+Loops
+	How a computer manages repetition
+	All loops have some sort of sentry (Control) variable
+Functions
+	Allow you to group code
+	Each functions is a solution to a sub problem
+Aggregate Data
+	Many pieces of data combined into a single variable
+	Come in many forms (Arrays, Lists, Classes, Dictionaries)
+
+
+
+Algorithms
+
+What makes a good algorithm?
+	Describe a problem
+	Break it down into smaller steps
+	Each step is do precise it can be converted into a line or two of code
+Pseudocode
+	We will use Pseudocode as our form of algorithm
+	Each idea as a statement in English
+	Should be able to do everything with no issue on paper with no computer
+Comments
+	Comments are used to explain the code within the computer
+	The code is there to explain the comment, to then explain that to the user
+
+	

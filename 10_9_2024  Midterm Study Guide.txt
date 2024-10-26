@@ -1,0 +1,342 @@
+Algorithms
+
+What are the features of a good algorithm? (5)
+How is pseudocode related to programming? (5)
+What is the appropriate detail for a line of pseudocode? (5)
+Should pseudocode look exactly like Python code? (5)
+Should you write pseudocode after the code is finished? (5)
+What are the seven main concepts in programming? (A) 
+
+
+Variables
+
+What form is all data in computer memory? (5)
+Why do we have different data types like ints and strings? (5)
+What are the basic numeric data types? (5)
+Why do we have two types of numbers? (5)
+What is the computing word for text data? Why? (5)
+What's a Boolean variable? (5)
+What do you need to know when you create a variable? (5 / A)
+How do you read "x = 5"? (5 / A)
+What are the primary variable naming conventions in Python? (5)
+How do you learn the type of an object in Python? (5)
+How do you determine what a specific object type can do? (5)
+
+
+Input / Output
+
+Why do we start I/O on the command line? (2)
+What type does most output need to be? (2 / 5)
+What is concatenation?  When does it cause problems in Python? (2 / 5)
+What is interpolation? How do f-strings work? Why are they preferred? (2 / 5)
+What do you need to know before you write an input statement? (2 / A)
+What type of data comes in from the input statement? (2)
+What if you want the data in another type? (2 / 5)
+What should you ask yourself when planning input? (2) 
+
+
+Operations
+
+What's the basic point of operations? (2)
+Do different types of objects support different operations? (2)
+What are the basic math operations? (2)
+Is x=x+1 legal in programming? What does it do? (2)
+What does x += 5 do? (2) 
+How do math operators work? (2) 
+In addition to ordinary math operators, what does // and % do? (2)
+What are the comparison operators? Do they work on all types of data? (2)
+What's a (built-in, for now) function?  (3)
+What are the primary type conversion functions? How do they work? (2 / 5)
+The str object has methods. What does that mean and how do you learn about them? (2)
+
+
+Conditions
+
+What is the basic purpose of a condition? (1)
+What's the definition of a condition? (1)
+Ultimately all conditions are evaluated to what? (1)
+How are conditions related to the if statement? (1)
+How would you read "x==5"? (1 / 2)
+What are the main types of comparison you might see in a condition? (1)
+Why is the line after an if statement always indented in Python? (1)
+Can you have more than one line execute if the condition is true? (1)
+How important is indentation in Python? (1)
+Can you intermingle tabs and spaces in your Python code? (1)
+What does an 'else' clause do? (1)
+Can you have 'else' without an 'if' statement? (1)
+How does elif work?  (1)
+If you have a bunch of elifs, can you still have an else? (1)
+What is shortcut evaluation, and how can it be helpful? (1)
+
+
+Compound Conditions
+
+What are the basic Boolean operators? (1)
+What will the following line do?
+If major == "computer" or "science": (1)
+What is dangerous about using 'not' with 'and' or 'or' (1)
+What's a simple way to replicate and? (1 / A)
+What is the side effect benefit of this approach? (1 / A)
+What's a simple way to replicate or? (1 / A)
+
+
+Lists and Tuples
+
+How many variables is a list? (4)
+How many values can it have? (4)
+How do you discover the main things a list can do? (2 / 4)
+Can you add or remove items from a list? (4)
+Can you find individual elements from a list? (4)
+Why do we avoid terms like 'first' and 'third' when talking about list elements? (4)
+What is the lowest index of a list? (4)
+What does a negative index mean? (4)
+What's the point of list slicing? (4)
+How is a tuple different from a list? (4)
+What are the main limitations of a tuple? (4)
+Can you still refer to individual elements of a tuple? (4)
+Can you use slicing on a tuple? (4)
+What's the relationship between strings and tuples? (4 / 5)
+
+
+For Loops
+
+What are the two major types of loops? (1)
+When would you choose a for loop? (1)
+What data structures are the natural companions of for loops? (1 / 4)
+What does 'iteration' mean? (1)
+If I had 'for item in inventory', what would item contain? (1)
+Do for loops work the same for tuples? Strings? (1)
+How do you do a for loop if you really want a range of numbers? (1)
+What's tricky about the end value of a range? (1)
+How do you count backwards or by fives using a range? (1)
+In the three parameter version of the range, what do the three values indicate? (1 / A)
+What do we call the variable that controls access to a loop? (1 / A)
+What three things do we need to always know about that variable? (1 / A)
+Can we use the range operator with lists and tuples? (1 / 4)
+Is there another easy way to get the index and value as we iterate through a list? (1 / 4)
+What situations is the for loop not good at? (1)
+
+
+Randomness
+
+Why is it helpful to have access to randomization? (2)
+Why are random functions in a module? (2)
+Are random numbers really random in a computer system? (2)
+What is a seed, and how can it be helpful? (2)
+Why does Python include randrange() and randint() functions? (2)
+Can you choose other kinds of distributions? (Gaussian) (2)
+
+
+While loops
+
+When are while loops a better choice than for loops? (1)
+What is the single required parameter of the while statement? (1)
+What is the primary variable you need to keep in mind while creating a while loop? (1 / A)
+What are the three things you need to know about that variable? (1 / A)
+When do you need to create the sentry variable? (1 / A)
+Where should you have the code that changes the sentry? (1 / A)
+Where in the loop does the condition go? (1)
+What happens if it is not possible to trigger the condition? (1)
+What happens if the condition is true? (1)
+Why is it often difficult to map algorithms to while loops? (1 / A)
+Why are compound conditions (and / or) especially troublesome in while loops? (1)
+
+
+While keepGoing
+
+Most algorithms think of how to exit the loop at the end of the loop. Why is this hard to map to while loops? (1)
+What are some advantages of a Boolean sentry variable? (1 / A)
+If you want more than one way out of a loop, how does that complicate your life? (1)
+Why not just use a lot of 'and / or / not' logic? (1 / A)
+Why is the 'while True' structure discouraged by some instructors? (1 / A)
+Why not simply use break or exit to get out of loops? (1 / A)
+How might a Boolean sentry like 'keepGoing' be helpful in this situation? (1)
+
+
+Debugging
+
+What are the three main ways code can go wrong? (5)
+What's the primary strategy for solving syntax errors? (5)
+Why is the line number so helpful in syntax errors? (5)
+How are run-time errors different than syntax errors? (5)
+What makes run-time errors difficult to recover from? (5)
+How do you prevent run-time errors? (5)
+How are bugs different from the other type of errors? (5)
+What makes bugs so difficult to work with? (5)
+What's the main idea behind a debugger? (5)
+Why might you want to view the variables while the program is paused? (5)
+What does the 'next' button do in a debugger? (5)
+What is a breakpoint?  Why might you use one? (5)
+Can you still use a debugger if you don't have an IDE like spyder? How? (5)
+
+
+Functions
+
+What is one of the key strategies for making complex code easier to manage? (3)
+What does the 'def' statement do? (3)
+What is a main() function, and why do we have one? (3)
+Why does a function name always include parentheses? (3)
+Why should you add a docstring at the beginning of every function? (3)
+What are the two primary types of functions and how do you tell them apart? (3)
+What is the best way to think of how a function shares information with the main program? (3)
+How does Python know to run the main() function? (3)
+Now that you know functions, what code should be in the default (non-function) space? (3)
+What is the purpose of a function parameter? (3)
+Can a function have no parameters? Many? How is that decided? (3)
+When you call a function with parameters, what must you remember to do? (3)
+What does a return statement do? (3)
+Where should the return statement go in a function? (3 / A)
+What should you do when you call a function that returns a value? (3)
+How can using a tuple or other data structure improve your code? (4)
+
+
+Function scope
+
+What is the difference between a global and a local variable? (3)
+How can local variables make your cognitive load easier? (3)
+How big of a problem should a function solve? (3)
+How do you pass data into and out of functions (3)
+What additional debugging features do you need when working with functions? (3 / 5)
+What is a constant? (5)
+Why are global constants ok if global variables are problematic? (5)
+
+
+Dictionaries
+
+What is the primary difference between a dictionary and a list? (4)
+Why are numeric indices common in tuples and lists? (4)
+When can string indices be helpful in a compound data structure? (4)
+What is interesting about the order of elements in a dictionary? (4)
+How do you read an element of a dictionary if you know the key? (1 / 4)
+How do you add a new element to a dictionary? (4)
+Does the for loop work with dictionaries? (1 / 4)
+What about the enumerate() function? What is close? (1 / 4)
+Is there an easy way to get a list of the keys or values in a dictionary? (4)
+
+
+2-Dimensional data
+
+If you were to build a distance calculator for five cities with if statements, how many ifs would you need? (4 / A)
+What if we increased the number of cities to 50? (4 / A)
+How do humans read data from a 2D chart? (4 / A)
+How do you design a 2D data structure? (4 / A)
+Can you have a tuple of tuples? A list of lists? A tuple of dictionaries? (4 / A)
+What does it mean to use a lookup table for complex data? (4 / A)
+How many lines of code to write a lookup table for that 5 city distance calculator? (4 / A)
+What if we increased the number of cities to 50? (4 / A)
+What are the bonus features of a 2D dictionary? ( 4 / A)
+
+
+File I/O
+
+What are the advantages of saving and loading files in your program?
+What are the advantages of sequential file access?
+What are the disadvantages of sequential file access?
+What are the primary file modes for opening a file?
+Why must you remember to close a file after you have opened it?
+What kind of data is best for CSV files?
+How is JSON related to Python?
+What is the json.dumps() method used for?
+Why is JSON a preferred way to store and load complex data?
+________________________________________________________________________________________
+
+			MIDTERM Stuff
+
+Modules and namespaces
+
+Why might you put code in a separate module?
+If modules are meant to be imported, why do they often have a main function?
+Why do we use the __name__ == "__main__" convention?
+
+
+Exceptions
+
+What kind of error requires exception handling?
+When would you put a try block in place?
+How do you know what kind of exception might happen in your code?
+Why might we consider exception-handling a safety net?
+Can you check a block of code for multiple exceptions?
+How do you test for an unknown exception?
+What can you do in the exception-handling code?
+
+
+Basic Object-Oriented Programming 
+
+How is a class different from a dictionary?
+How is an attribute different from a method?
+What is the purpose of the __init__() method of a class?
+What parameter is part of every class method?
+What does the keyword self refer to in Python objects?
+What line is usually the first line of an __init__ method?
+Why do you do that?
+What is the main job of an initializer?
+Why do attributes normally start with a double underscore?
+What is the purpose of methods?
+
+
+Properties
+
+Why do objects often have properties?
+What is the advantage of hiding the data behind properties?
+What is the purpose of a decorator like @property?
+Why is a property often defined by two method?
+How do you specify a setter property?
+What is the difference between a getter and a setter?
+How do properties simplify coding for a programmer using the object?
+How do properties make data safer?
+Why might you want a virtual property?
+Why might you filter the output of an attribute?
+
+
+Inheritance
+
+What is the main idea behind inheritance?
+What does it mean for a class to be inherited from another class?
+Can you add new behavior to an inherited class?
+Can you change the behavior of a method that's already defined?
+Can a method be empty? Why might you do this?
+What does inheritance have to do with the super() function?
+
+
+Graphics and Pygame
+
+What is the purpose of a graphics API?
+Is Pygame a built-in part of Python? How do you install it?
+What is a pygame Surface?  What can you do with it?
+What does clock.tick(30) do?
+What does it mean to step through all the events?
+What is the idea behind the blit() function?
+What is double-buffering?
+
+
+Basic Animation
+
+How is all computer animation really an illusion?
+When you are 'moving a box' on the screen, what are you really doing?
+When you change a variable inside a loop, what should you immediately think about?
+How does blitting a background onto the screen help with the illusion of motion?
+What is the purpose of pygame.image.load()?
+When you load an image, why do you use convert()?
+When might you use convert_alpha() instead of regular convert()
+How do you change the size of an image once it's been loaded?
+What are good guidelines for using images and resources created by others?
+
+
+Intro to SimpleGE
+
+What is attractive about having a game engine?
+What are the main two elements of SimpleGE?
+What is the big picture purpose of the Scene class?
+What is the main purpose of the BasicSprite class?
+How do you use simpleGE in your games?
+What is the purpose of the scene's spritelist?
+What's the purpose of the Scene.isKeyPressed() method?
+What are the key elements of the BasicSprite?
+What's the point of the checkBounds() method?
+How do you put event-handling code in the sprite itself?
+Can you build a game with the standard simpleGE classes?
+Why is it common to subclass both Scene and the Sprite classes?
+How is the event system different from keyboard or mouse polling?
+
+
+
