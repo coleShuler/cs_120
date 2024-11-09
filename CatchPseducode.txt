@@ -1,0 +1,56 @@
+Import Pygame, simpleGE, and Random
+
+Make a coin class
+	Set the image
+	set the size
+	coins fall from top of the screen
+	coins disappear at the bottom and when collected
+	make at least 10
+	set speed
+
+
+Make a turtle class
+	Move left and right
+	Cant move up and down
+	Sit in the bottom of the screen
+	Set the image size to fit in the screen at  the right spot
+	
+
+Make a score counter
+	Set the score to 0
+	Set the placement
+	
+
+Make the Game State
+	Set the Background
+	Set up the timer
+	Set up coin sound
+	Set up all sprites 
+	Set up collision and reset properties (leaf)
+	Create the timer properties
+	
+Make the Title screen
+	Set the image 
+	Create the "Play" button
+	Create the "Quit" button
+	Make the Title Text
+		"You are a Turtle!",
+        	"Move with the arrow keys",
+        	"Catch as many Leaf's as you can!",
+        	"This game is timed, so be aware",
+        	"Have Fun :D"
+	Set the location
+	Set the size
+	set up last score on title screen
+	
+
+Make a main
+	Game must be listed here
+	Start must be listed here
+	Menu must be listed here
+	Make a while loop to run the game
+
+Make an if statement to start and run main
+	main()
+
+Make an if statement that runs main
