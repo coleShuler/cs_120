@@ -1,0 +1,90 @@
+import pygame, simpleGE, random
+
+pygame.init()
+
+screen = pygame.display.set_mode((640, 480))
+pygame.display.set_caption("Rhythm Ride")
+
+from pygame import mixer
+mixer.init()
+mixer.music.load("Song.mp3")
+mixer.music.play()
+
+class Space(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.current_image = "Light_W.png"
+        self.setImage(self.current_image)
+        self.setSize(75, 75)
+        self.position = (100, 400)
+        self.key_active_until = 0
+        self.key_pressed = False
+
+    def process(self):
+        if self.isKeyPressed(pygame.K_w) and not self.key_pressed:
+            self.current_image = "Dark_W.png"
+            self.setImage(self.current_image)
+            self.setSize(75, 75)
+            self.position = (100, 400)
+            self.key_active_until = pygame.time.get_ticks() + 100 
+            self.key_pressed = True 
+        
+        if pygame.time.get_ticks() > self.key_active_until:
+            self.current_image = "Light_W.png"
+            self.setImage(self.current_image)
+            self.setSize(75, 75)
+            self.position = (100, 400)
+
+        if not self.isKeyPressed(pygame.K_w):
+            self.key_pressed = False
+
+            
+            
+class Test(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.setImage("Test.png")
+        self.setSize(80, 80)
+        self.position = (100, 10)
+        self.dy = 10
+
+    def checkBounds(self):
+        if self.y < 0:
+            self.scene.reset()
+            
+    def process(self):
+        if self.collidesWith(self.scene.space) and self.scene.space.current_image == "Dark_W.png":
+            self.position = (100, 10)
+
+class Test2(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.setImage("Test.png")
+        self.setSize(80, 80)
+        self.position = (100, 200)
+        self.dy = 10
+
+    def checkBounds(self):
+        if self.y < 0:
+            self.scene.reset()
+
+    def process(self):
+        if self.collidesWith(self.scene.space) and self.scene.space.current_image == "Dark_W.png":
+            self.position = (100, 10)
+
+class Game(simpleGE.Scene):
+    def __init__(self):
+        super().__init__()
+        self.setImage("BG.jpg")
+        self.space = Space(self)
+        self.test = Test(self)
+        self.test2 = Test2(self)
+        self.sprites = [self.space, self.test, self.test2]
+
+def main():
+    game = Game()
+    game.start()
+
+if __name__ == "__main__":
+    main()
+

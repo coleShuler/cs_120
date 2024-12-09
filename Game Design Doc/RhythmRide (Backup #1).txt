@@ -1,0 +1,83 @@
+import pygame, simpleGE, random
+
+# Initialize pygame
+pygame.init()
+
+# Set up the display
+screen = pygame.display.set_mode((640, 480))
+pygame.display.set_caption("Rhythm Ride")
+
+# Load and play music
+from pygame import mixer
+mixer.init()
+mixer.music.load("Song.mp3")
+mixer.music.play()
+
+# Load Player Sprite
+class Space(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.setImage("Light_W.png")
+        self.setSize(150, 150)
+        self.position = (320, 400)
+        
+    def process(self):
+        if self.isKeyPressed(pygame.K_SPACE):
+            self.setImage("Dark_W.png")
+        else:
+            self.setImage("Light_W.png")
+        self.setSize(150, 150)
+        self.position = (320, 400)
+
+#Load Falling Sprite #1
+class Test(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.setImage("Test.png")
+        self.setSize(80, 80)
+        self.position = (320, 10)
+        self.dy = 10
+
+    def checkBounds(self):
+        if self.y < 0:
+            self.scene.reset()
+            
+    def process(self):
+        if self.collidesWith(self.scene.space):
+            self.position = (320, 10)
+
+#Load Falling Sprite #2
+class Test2(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.setImage("Test.png")
+        self.setSize(80, 80)
+        self.position = (320, 10)
+        self.dy = 5
+        
+    def checkBounds(self):
+        if self.y < 0:
+            self.scene.reset()
+            
+    def process(self):
+        if self.collidesWith(self.scene.space):
+            self.position = (320, 10)        
+
+
+#Load Main Game
+class Game(simpleGE.Scene):
+    def __init__(self):
+        super().__init__()
+        self.setImage("BG.jpg")
+        self.space = Space(self)
+        self.test = Test(self)
+        self.test2 = Test2(self)
+        self.sprites = [self.space, self.test, self.test2]
+
+def main():
+    game = Game()
+    game.start()
+
+if __name__ == "__main__":
+    main()
+

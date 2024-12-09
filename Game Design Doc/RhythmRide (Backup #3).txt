@@ -1,0 +1,298 @@
+#Welcoms to the main code for Rhythm Ride! Shoutout to Potsu for the song that was used in this game
+import pygame, simpleGE, random
+pygame.init()
+
+
+
+        #Screen Setup
+screen = pygame.display.set_mode((640, 480))
+pygame.display.set_caption("Rhythm Ride")
+
+
+
+        #Music Loader
+from pygame import mixer
+mixer.init()
+mixer.music.load("Song.mp3")
+mixer.music.play()
+
+
+
+        #Main Player icon
+class Space_Key(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.current_image = "Light_Space.png"
+        self.setImage(self.current_image)
+        self.setSize(400, 75)
+        self.position = (320, 400)
+        self.key_active_until = 0
+        self.key_pressed = False
+
+#Check if key was pressed
+    def process(self):
+        if self.isKeyPressed(pygame.K_SPACE) and not self.key_pressed:
+            self.current_image = "Dark_Space.png"
+            self.setImage(self.current_image)
+            self.setSize(400, 75)
+            self.position = (320, 400)
+            self.key_active_until = pygame.time.get_ticks() + 100 
+            self.key_pressed = True
+
+#Timer for key presses (No Holding down the space key)      
+        if pygame.time.get_ticks() > self.key_active_until:
+            self.current_image = "Light_Space.png"
+            self.setImage(self.current_image)
+            self.setSize(400, 75)
+            self.position = (320, 400)
+        if not self.isKeyPressed(pygame.K_SPACE):
+            self.key_pressed = False
+
+
+
+        #Title Screen (Scrolls from top to bottom)
+class Title(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.setImage("Title_Screen.jpg")
+        self.setSize(640, 300)
+        self.position = (320, 0)
+        self.dy = 3
+    def checkBounds(self):
+        if self.y < 0:
+            setImage("placeHolder.jpg")
+            self.dy = 0
+
+
+
+class Lose(simpleGE.Sprite):
+    def __init__(self, scene):
+        self.setImage("Lose.jpg")
+        self.setSize(1, 1)
+        self.position = (10, 10)
+
+
+
+#Issue with image buffer
+class PH(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.setImage("placeHolder.jpg")
+        self.setSize(150, 150)
+        self.position = (1, 1)
+
+
+        #1st Object
+class Beat1(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.current_image = "Beat.png"
+        self.setImage(self.current_image)
+        self.setSize(40, 40)
+        self.position = (320, 75)
+        self.dy = 0
+ 
+#Title Screen Buffer
+    def process(self):
+        if self.scene.title.y > 0:
+            self.dy = 0
+        if self.scene.title.y > 700:
+            self.dy = 6.05
+ 
+#Check if hit            
+        if self.collidesWith(self.scene.space_Key) and self.scene.space_Key.current_image == "Dark_Space.png":
+            self.current_image = "Blue.png"
+            self.setImage(self.current_image)
+            self.setSize(20, 20)
+
+#Check for ball to respawn
+        if self.scene.beat1.y > 470 and self.scene.beat1.current_image == "Blue.png":
+            self.current_image = "Beat.png"
+            self.setImage(self.current_image)
+            self.position = (320, 1)
+            self.setSize(40, 40)
+
+#End Music / Lost Game        
+        if self.scene.beat1.y > 470 and self.scene.beat1.current_image == "Beat.png":
+            self.dy = 0
+            mixer.music.stop()
+
+
+
+        #2nd Object
+class Beat2(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.current_image = "Beat.png"
+        self.setImage(self.current_image)
+        self.setSize(40, 40)
+        self.position = (320, 140)
+        self.dy = 0
+ 
+#Title Screen Buffer
+    def process(self):
+        if self.scene.title.y > 0:
+            self.dy = 0
+        if self.scene.title.y > 700:
+            self.dy = 6.05
+ 
+#Check if hit            
+        if self.collidesWith(self.scene.space_Key) and self.scene.space_Key.current_image == "Dark_Space.png":
+            self.current_image = "Blue.png"
+            self.setImage(self.current_image)
+            self.setSize(20, 20)
+
+#Check for ball to respawn
+        if self.scene.beat2.y > 470 and self.scene.beat2.current_image == "Blue.png":
+            self.current_image = "Beat.png"
+            self.setImage(self.current_image)
+            self.position = (320, 1)
+            self.setSize(40, 40)
+
+#End Music / Lost Game        
+        if self.scene.beat2.y > 470 and self.scene.beat2.current_image == "Beat.png":
+            self.dy = 0
+            mixer.music.stop()
+
+
+
+        #3rd Object
+class Beat3(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.current_image = "Beat.png"
+        self.setImage(self.current_image)
+        self.setSize(40, 40)
+        self.position = (320, 200)
+        self.dy = 0
+ 
+#Title Screen Buffer
+    def process(self):
+        if self.scene.title.y > 0:
+            self.dy = 0
+        if self.scene.title.y > 700:
+            self.dy = 6.05
+ 
+#Check if hit            
+        if self.collidesWith(self.scene.space_Key) and self.scene.space_Key.current_image == "Dark_Space.png":
+            self.current_image = "Blue.png"
+            self.setImage(self.current_image)
+            self.setSize(20, 20)
+
+#Check for ball to respawn
+        if self.scene.beat3.y > 470 and self.scene.beat3.current_image == "Blue.png":
+            self.current_image = "Beat.png"
+            self.setImage(self.current_image)
+            self.position = (320, 1)
+            self.setSize(40, 40)
+
+#End Music / Lost Game        
+        if self.scene.beat3.y > 470 and self.scene.beat3.current_image == "Beat.png":
+            self.dy = 0
+            mixer.music.stop()
+
+
+
+        #4th Object
+class Beat4(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.current_image = "Beat.png"
+        self.setImage(self.current_image)
+        self.setSize(40, 40)
+        self.position = (320, 300)
+        self.dy = 0
+ 
+#Title Screen Buffer
+    def process(self):
+        if self.scene.title.y > 0:
+            self.dy = 0
+        if self.scene.title.y > 700:
+            self.dy = 6.05
+ 
+#Check if hit            
+        if self.collidesWith(self.scene.space_Key) and self.scene.space_Key.current_image == "Dark_Space.png":
+            self.current_image = "Blue.png"
+            self.setImage(self.current_image)
+            self.setSize(20, 20)
+
+#Check for ball to respawn
+        if self.scene.beat4.y > 470 and self.scene.beat4.current_image == "Blue.png":
+            self.current_image = "Beat.png"
+            self.setImage(self.current_image)
+            self.position = (320, 1)
+            self.setSize(40, 40)
+
+#End Music / Lost Game        
+        if self.scene.beat4.y > 470 and self.scene.beat4.current_image == "Beat.png":
+            self.dy = 0
+            mixer.music.stop()
+
+
+
+        #5th Object
+class Beat5(simpleGE.Sprite):
+    def __init__(self, scene):
+        super().__init__(scene)
+        self.current_image = "Blue.png"
+        self.setImage(self.current_image)
+        self.setSize(40, 40)
+        self.position = (320, 380)
+        self.dy = 0
+ 
+#Title Screen Buffer
+    def process(self):
+        if self.scene.title.y > 0:
+            self.dy = 0
+        if self.scene.title.y > 700:
+            self.dy = 6.05
+ 
+#Check if hit            
+        if self.collidesWith(self.scene.space_Key) and self.scene.space_Key.current_image == "Dark_Space.png":
+            self.current_image = "Blue.png"
+            self.setImage(self.current_image)
+            self.setSize(20, 20)
+
+#Check for ball to respawn
+        if self.scene.beat5.y > 470 and self.scene.beat5.current_image == "Blue.png":
+            self.current_image = "Beat.png"
+            self.setImage(self.current_image)
+            self.position = (320, 1)
+            self.setSize(40, 40)
+
+#End Music / Lost Game        
+        if self.scene.beat5.y > 470 and self.scene.beat5.current_image == "Beat.png":
+            self.dy = 0
+            mixer.music.stop()
+
+
+
+#Game Setup
+class Game(simpleGE.Scene):
+    def __init__(self):
+        super().__init__()
+        self.title = Title(self)
+        self.space_Key = Space_Key(self)
+        self.beat1 = Beat1(self)
+        self.beat2 = Beat2(self)
+        self.beat3 = Beat3(self)
+        self.beat4 = Beat4(self)
+        self.beat5 = Beat5(self)
+        self.ph = PH(self)
+        self.sprites = [self.space_Key,
+                        self.beat1,
+                        self.beat2,
+                        self.beat3,
+                        self.beat4,
+                        self.beat5,
+                        self.ph,
+                        self.title,]
+
+
+
+#Runs Game Program
+def main():
+    game = Game()
+    game.start()
+if __name__ == "__main__":
+    main()
